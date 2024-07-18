@@ -1,0 +1,11 @@
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Shared\bin\Debug\net7.0\AppWebBlazor2.Shared.deps.json
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Shared\bin\Debug\net7.0\AppWebBlazor2.Shared.dll
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Shared\bin\Debug\net7.0\AppWebBlazor2.Shared.pdb
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Shared\obj\Debug\net7.0\AppWebBlazor2.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Shared\obj\Debug\net7.0\AppWebBlazor2.Shared.AssemblyInfoInputs.cache
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Shared\obj\Debug\net7.0\AppWebBlazor2.Shared.AssemblyInfo.cs
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Shared\obj\Debug\net7.0\AppWebBlazor2.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Shared\obj\Debug\net7.0\AppWebBlazor2.Shared.dll
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Shared\obj\Debug\net7.0\refint\AppWebBlazor2.Shared.dll
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Shared\obj\Debug\net7.0\AppWebBlazor2.Shared.pdb
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Shared\obj\Debug\net7.0\ref\AppWebBlazor2.Shared.dll

@@ -1,0 +1,175 @@
+﻿@page "/empleado"
+@using AppWebBlazor2.Client.Services.Interfaces
+@using AppWebBlazor2.Shared
+
+@inject ICargoService cargoService;
+@inject IEmpleadoService empleadoService;
+
+<PageTitle>Empleado</PageTitle>
+
+<h3>Empleados</h3>
+
+<div class="content">
+    <div class="row">
+
+        <input type="hidden" name="name" value="@idempleado" />
+
+        <div class="col-3">
+            <label>Cargo:</label>
+            <select class="form-select" value="@idcargo" @onchange="CargoSeleccionado">
+                <option value="0">-- Seleccionar --</option>
+                @foreach (var item in listaCargo)
+                {
+                    <option value="@item.Idcargo"> @item.Nombre </option>
+                }
+            </select>
+        </div>
+
+        <div class="col-3">
+            <label>Empleado:</label>
+            <InputText class="form-control" @bind-Value="nombre"></InputText>
+        </div>
+
+        <div class="col-2">
+            <label>Edad:</label>
+            <InputNumber class="form-control" @bind-Value="edad"></InputNumber>
+        </div>
+
+        <div class="col-2">
+            <label>Salario:</label>
+            <InputNumber class="form-control" @bind-Value="salario"></InputNumber>
+        </div>
+
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-4">
+            <button class="btn btn-primary" @onclick="GuardarEmpleado">Guardar</button>
+        </div>
+    </div>
+
+    <hr />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cargo</th>
+                <th>Empleado</th>
+                <th>Edad</th>
+                <th>Salario</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in listaEmpleado)
+            {
+                <tr>
+                    <td>@item.Cargo!.Nombre</td>
+                    <td>@item.Nombre</td>
+                    <td>@item.Edad</td>
+                    <td>@item.Salario</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning"
+                                @onclick="@(() => EditarEmpleado(item.Idempleado))">
+                            <span class="oi oi-pencil"></span>
+                        </button>
+                        <button class="btn btn-sm btn-danger"
+                                @onclick="@(() => EliminarEmpleado(item.Idempleado))">
+                            <span class="oi oi-trash"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+@code {
+    List<CargoDTO> listaCargo = new List<CargoDTO>();
+    List<EmpleadoDTO> listaEmpleado = new List<EmpleadoDTO>();
+    int idempleado = 0;
+    int idcargo = 0;
+    string nombre = "";
+    int? edad = 0;
+    decimal? salario = 0;
+
+    public void CargoSeleccionado(ChangeEventArgs e)
+    {
+        int id = Convert.ToInt32(e.Value!.ToString());
+
+        this.idcargo = id;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        listaCargo = new List<CargoDTO>();
+        listaCargo = await cargoService.Listar();
+        await CargarListaEmpleados();
+    }
+
+    private async Task CargarListaEmpleados()
+    {
+        listaEmpleado = new List<EmpleadoDTO>();
+        listaEmpleado = await empleadoService.Listar();
+    }
+
+    private async void GuardarEmpleado()
+    {
+        bool result = false;
+
+        var empleadoDTO = new EmpleadoDTO()
+            {
+                Idempleado = this.idempleado,
+
+                Cargo = this.listaCargo.Find(c => c.Idcargo == this.idcargo),
+                Nombre = this.nombre,
+                Edad = this.edad,
+                Salario = this.salario
+            };
+
+        if (this.idempleado == 0)
+        {
+            result = await this.empleadoService.Registrar(empleadoDTO);
+        }
+        else
+        {
+            result = await this.empleadoService.Editar(this.idempleado, empleadoDTO);
+        }
+
+        if (result)
+        {
+            this.idempleado = 0;
+            this.idcargo = 0;
+            this.nombre = "";
+            this.edad = 0;
+            this.salario = 0;
+
+            await CargarListaEmpleados();
+            StateHasChanged();
+        }
+    }
+
+    private void EditarEmpleado(int id)
+    {
+        var empleado = listaEmpleado.First(e => e.Idempleado == id);
+
+        this.idempleado = id;
+        this.idcargo = empleado.Cargo!.Idcargo;
+        this.nombre = empleado.Nombre!;
+        this.edad = empleado.Edad;
+        this.salario = empleado.Salario;
+    }
+
+    private async void EliminarEmpleado(int id)
+    {
+        var result = await this.empleadoService.Eliminar(id);
+
+        if (result)
+        {
+
+            await CargarListaEmpleados();
+            StateHasChanged();
+        }
+    }
+}

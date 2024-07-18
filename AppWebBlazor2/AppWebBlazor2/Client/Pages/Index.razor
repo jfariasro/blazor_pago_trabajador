@@ -1,0 +1,131 @@
+﻿@page "/"
+@using AppWebBlazor2.Client.Services.Interfaces
+@using AppWebBlazor2.Shared
+
+@inject ICargoService cargoService;
+
+<PageTitle>Cargo</PageTitle>
+
+<h3>Cargos</h3>
+
+<div class="content">
+    <div class="container">
+
+        <input type="hidden" name="name" value="@idcargo" />
+
+        <div class="mb-2">
+            <label for="cargo">Cargo:</label>
+            <InputText class="form-control" id="cargo" @bind-Value="nombre"></InputText>
+        </div>
+
+        <div class="mb-2">
+            <label for="descripcion">Descripción:</label>
+            <InputTextArea class="form-control" id="descripcion" @bind-Value="descripcion"></InputTextArea>
+        </div>
+
+        <button class="btn btn-primary" @onclick="GuardarCargo">Guardar</button>
+
+    </div>
+
+    <hr />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cargo</th>
+                <th>Descripción</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in listaCargo)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>@item.Desripcion</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning"
+                                @onclick="@(() => EditarCargo(item.Idcargo))">
+                            <span class="oi oi-pencil"></span>
+                        </button>
+                        <button class="btn btn-sm btn-danger"
+                                @onclick="@(() => EliminarCargo(item.Idcargo))">
+                            <span class="oi oi-trash"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+@code {
+    List<CargoDTO> listaCargo = new List<CargoDTO>();
+    int idcargo = 0;
+    string nombre = "";
+    string descripcion = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarListaCargos();
+    }
+
+    private async Task CargarListaCargos()
+    {
+        listaCargo = new List<CargoDTO>();
+        listaCargo = await cargoService.Listar();
+    }
+
+    private async void GuardarCargo()
+    {
+        bool result = false;
+
+        var cargoDTO = new CargoDTO()
+            {
+                Idcargo = this.idcargo,
+                Nombre = this.nombre,
+                Desripcion = this.descripcion
+            };
+
+        if(this.idcargo == 0)
+        {
+            result = await this.cargoService.Registrar(cargoDTO);
+        }
+        else
+        {
+            result = await this.cargoService.Editar(this.idcargo, cargoDTO);
+        }
+
+        if (result)
+        {
+            this.idcargo = 0;
+            this.nombre = "";
+            this.descripcion = "";
+
+            await CargarListaCargos();
+            StateHasChanged();
+        }
+    }
+
+    private void EditarCargo(int id)
+    {
+        var cargo = listaCargo.First(c => c.Idcargo == id);
+
+        this.idcargo = id;
+        this.nombre = cargo.Nombre!;
+        this.descripcion = cargo.Desripcion!;
+    }
+
+    private async void EliminarCargo(int id)
+    {
+        var result = await this.cargoService.Eliminar(id);
+
+        if (result)
+        {
+
+            await CargarListaCargos();
+            StateHasChanged();
+        }
+    }
+}

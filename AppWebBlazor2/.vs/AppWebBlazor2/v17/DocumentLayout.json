@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ruben\\Music\\ASP.NET\\AppWebBlazor2\\AppWebBlazor2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{828197B1-A5DF-4AEC-BD4B-7135EC875C0D}|AppWebBlazor2\\Client\\AppWebBlazor2.Client.csproj|c:\\users\\ruben\\music\\asp.net\\appwebblazor2\\appwebblazor2\\appwebblazor2\\client\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{828197B1-A5DF-4AEC-BD4B-7135EC875C0D}|AppWebBlazor2\\Client\\AppWebBlazor2.Client.csproj|solutionrelative:appwebblazor2\\client\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{828197B1-A5DF-4AEC-BD4B-7135EC875C0D}|AppWebBlazor2\\Client\\AppWebBlazor2.Client.csproj|c:\\users\\ruben\\music\\asp.net\\appwebblazor2\\appwebblazor2\\appwebblazor2\\client\\pages\\empleado.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{828197B1-A5DF-4AEC-BD4B-7135EC875C0D}|AppWebBlazor2\\Client\\AppWebBlazor2.Client.csproj|solutionrelative:appwebblazor2\\client\\pages\\empleado.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E839FE3F-7DB6-4057-8CF5-EDF7507ED73E}|AppWebBlazor2\\Server\\AppWebBlazor2.Server.csproj|c:\\users\\ruben\\music\\asp.net\\appwebblazor2\\appwebblazor2\\appwebblazor2\\server\\controllers\\empleadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E839FE3F-7DB6-4057-8CF5-EDF7507ED73E}|AppWebBlazor2\\Server\\AppWebBlazor2.Server.csproj|solutionrelative:appwebblazor2\\server\\controllers\\empleadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{828197B1-A5DF-4AEC-BD4B-7135EC875C0D}|AppWebBlazor2\\Client\\AppWebBlazor2.Client.csproj|c:\\users\\ruben\\music\\asp.net\\appwebblazor2\\appwebblazor2\\appwebblazor2\\client\\services\\entities\\cargoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{828197B1-A5DF-4AEC-BD4B-7135EC875C0D}|AppWebBlazor2\\Client\\AppWebBlazor2.Client.csproj|solutionrelative:appwebblazor2\\client\\services\\entities\\cargoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{828197B1-A5DF-4AEC-BD4B-7135EC875C0D}|AppWebBlazor2\\Client\\AppWebBlazor2.Client.csproj|c:\\users\\ruben\\music\\asp.net\\appwebblazor2\\appwebblazor2\\appwebblazor2\\client\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{828197B1-A5DF-4AEC-BD4B-7135EC875C0D}|AppWebBlazor2\\Client\\AppWebBlazor2.Client.csproj|solutionrelative:appwebblazor2\\client\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\Ruben\\Music\\ASP.NET\\AppWebBlazor2\\AppWebBlazor2\\AppWebBlazor2\\Client\\Shared\\NavMenu.razor",
+              "RelativeDocumentMoniker": "AppWebBlazor2\\Client\\Shared\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\Ruben\\Music\\ASP.NET\\AppWebBlazor2\\AppWebBlazor2\\AppWebBlazor2\\Client\\Shared\\NavMenu.razor",
+              "RelativeToolTip": "AppWebBlazor2\\Client\\Shared\\NavMenu.razor",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-18T16:21:23.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmpleadoController.cs",
+              "DocumentMoniker": "C:\\Users\\Ruben\\Music\\ASP.NET\\AppWebBlazor2\\AppWebBlazor2\\AppWebBlazor2\\Server\\Controllers\\EmpleadoController.cs",
+              "RelativeDocumentMoniker": "AppWebBlazor2\\Server\\Controllers\\EmpleadoController.cs",
+              "ToolTip": "C:\\Users\\Ruben\\Music\\ASP.NET\\AppWebBlazor2\\AppWebBlazor2\\AppWebBlazor2\\Server\\Controllers\\EmpleadoController.cs",
+              "RelativeToolTip": "AppWebBlazor2\\Server\\Controllers\\EmpleadoController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T16:14:39.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CargoService.cs",
+              "DocumentMoniker": "C:\\Users\\Ruben\\Music\\ASP.NET\\AppWebBlazor2\\AppWebBlazor2\\AppWebBlazor2\\Client\\Services\\Entities\\CargoService.cs",
+              "RelativeDocumentMoniker": "AppWebBlazor2\\Client\\Services\\Entities\\CargoService.cs",
+              "ToolTip": "C:\\Users\\Ruben\\Music\\ASP.NET\\AppWebBlazor2\\AppWebBlazor2\\AppWebBlazor2\\Client\\Services\\Entities\\CargoService.cs",
+              "RelativeToolTip": "AppWebBlazor2\\Client\\Services\\Entities\\CargoService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T15:50:05.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Empleado.razor",
+              "DocumentMoniker": "C:\\Users\\Ruben\\Music\\ASP.NET\\AppWebBlazor2\\AppWebBlazor2\\AppWebBlazor2\\Client\\Pages\\Empleado.razor",
+              "RelativeDocumentMoniker": "AppWebBlazor2\\Client\\Pages\\Empleado.razor",
+              "ToolTip": "C:\\Users\\Ruben\\Music\\ASP.NET\\AppWebBlazor2\\AppWebBlazor2\\AppWebBlazor2\\Client\\Pages\\Empleado.razor",
+              "RelativeToolTip": "AppWebBlazor2\\Client\\Pages\\Empleado.razor",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAAAG4AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-18T15:06:35.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.razor",
+              "DocumentMoniker": "C:\\Users\\Ruben\\Music\\ASP.NET\\AppWebBlazor2\\AppWebBlazor2\\AppWebBlazor2\\Client\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "AppWebBlazor2\\Client\\Pages\\Index.razor",
+              "ToolTip": "C:\\Users\\Ruben\\Music\\ASP.NET\\AppWebBlazor2\\AppWebBlazor2\\AppWebBlazor2\\Client\\Pages\\Index.razor",
+              "RelativeToolTip": "AppWebBlazor2\\Client\\Pages\\Index.razor",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAAFIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-18T14:28:29.157Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
