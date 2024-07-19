@@ -96,3 +96,4 @@ C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Server\ob
 C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Server\obj\Debug\net7.0\AppWebBlazor2.Server.pdb
 C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Server\obj\Debug\net7.0\AppWebBlazor2.Server.genruntimeconfig.cache
 C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Server\obj\Debug\net7.0\ref\AppWebBlazor2.Server.dll
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Server\obj\Debug\net7.0\AppWebBlazor2.Server.sourcelink.json

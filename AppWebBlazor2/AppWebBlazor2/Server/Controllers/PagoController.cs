@@ -8,12 +8,12 @@ namespace AppWebBlazor2.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmpleadoController : ControllerBase
+    public class PagoController : ControllerBase
     {
 
         private readonly Mydb2Context _context;
 
-        public EmpleadoController(Mydb2Context context)
+        public PagoController(Mydb2Context context)
         {
             _context = context;
         }
@@ -22,22 +22,20 @@ namespace AppWebBlazor2.Server.Controllers
         [Route("Listar")]
         public async Task<IActionResult> Listar()
         {
-            var lista = new List<EmpleadoDTO>();
+            var lista = new List<PagoDTO>();
 
-            foreach (var item in await _context.Empleados.Include(e => e.IdcargoNavigation).ToListAsync())
+            foreach (var item in await _context.Pagos.Include(p => p.IdempleadoNavigation).ToListAsync())
             {
-                lista.Add(new EmpleadoDTO
+                lista.Add(new PagoDTO
                 {
-                    Idempleado = item.Idempleado,
-                    Cargo = new CargoDTO
+                    Idpago = item.Idpago,
+                    Empleado = new EmpleadoDTO
                     {
-                        Idcargo = item.IdcargoNavigation!.Idcargo,
-                        Nombre = item.IdcargoNavigation!.Nombre,
-                        Desripcion = item.IdcargoNavigation!.Desripcion,
+                        Idempleado = item.IdempleadoNavigation!.Idempleado,
+                        Nombre = item.IdempleadoNavigation!.Nombre
                     },
-                    Nombre = item.Nombre,
-                    Edad = item.Edad,
-                    Salario = item.Salario
+                    Fechapago = item.Fechapago,
+                    Totalpago = item.Totalpago,
                 });
             }
 
@@ -46,19 +44,18 @@ namespace AppWebBlazor2.Server.Controllers
 
         [HttpPost]
         [Route("Registrar")]
-        public async Task<IActionResult> Registrar([FromBody] EmpleadoDTO empleadoDTO)
+        public async Task<IActionResult> Registrar([FromBody] PagoDTO pagoDTO)
         {
             try
             {
-                var empleado = new Empleado()
+                var pago = new Pago()
                 {
-                    Idempleado = empleadoDTO.Idempleado,
-                    Idcargo = empleadoDTO.Cargo!.Idcargo,
-                    Nombre = empleadoDTO.Nombre,
-                    Edad = empleadoDTO.Edad,
-                    Salario = empleadoDTO.Salario
+                    Idpago = pagoDTO.Idpago,
+                    Idempleado = pagoDTO.Empleado!.Idempleado,
+                    Fechapago = pagoDTO.Fechapago,
+                    Totalpago = pagoDTO.Totalpago
                 };
-                await _context.Empleados.AddAsync(empleado);
+                await _context.Pagos.AddAsync(pago);
                 await _context.SaveChangesAsync();
 
                 return StatusCode(StatusCodes.Status200OK, new { Valor = true });
@@ -71,28 +68,27 @@ namespace AppWebBlazor2.Server.Controllers
 
         [HttpPut]
         [Route("Editar/{id:int}")]
-        public async Task<IActionResult> Editar([FromRoute] int id, [FromBody] EmpleadoDTO empleadoDTO)
+        public async Task<IActionResult> Editar([FromRoute] int id, [FromBody] PagoDTO pagoDTO)
         {
             try
             {
-                if (id != empleadoDTO.Idempleado)
+                if (id != pagoDTO.Idpago)
                     return NotFound("No coincide");
 
-                var empleado = await _context.Empleados.FindAsync(id);
+                var pago = await _context.Pagos.FindAsync(id);
 
-                if (empleado == null)
+                if (pago == null)
                     return NotFound("No encontrado");
 
-                var model = new Empleado()
+                var model = new Pago()
                 {
-                    Idempleado = empleadoDTO.Idempleado,
-                    Idcargo = empleadoDTO.Cargo!.Idcargo,
-                    Nombre = empleadoDTO.Nombre,
-                    Edad = empleadoDTO.Edad,
-                    Salario = empleadoDTO.Salario
+                    Idpago = pagoDTO.Idpago,
+                    Idempleado = pagoDTO.Empleado!.Idempleado,
+                    Fechapago = pagoDTO.Fechapago,
+                    Totalpago = pagoDTO.Totalpago
                 };
 
-                _context.Entry(empleado).CurrentValues.SetValues(model);
+                _context.Entry(pago).CurrentValues.SetValues(model);
 
                 await _context.SaveChangesAsync();
                 return StatusCode(StatusCodes.Status200OK, new { Valor = true });
@@ -109,12 +105,12 @@ namespace AppWebBlazor2.Server.Controllers
         {
             try
             {
-                var empleado = await _context.Empleados.FindAsync(id);
+                var pago = await _context.Pagos.FindAsync(id);
 
-                if (empleado == null)
+                if (pago == null)
                     return NotFound("No encontrado");
 
-                _context.Empleados.Remove(empleado);
+                _context.Pagos.Remove(pago);
                 await _context.SaveChangesAsync();
 
                 return StatusCode(StatusCodes.Status200OK, new { Valor = true });

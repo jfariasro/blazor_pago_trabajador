@@ -91,12 +91,12 @@ namespace AppWebBlazor2.Server.Controllers
         {
             try
             {
-                var cargoDTO = await _context.Cargos.FindAsync(id);
+                var cargo = await _context.Cargos.FindAsync(id);
 
-                if (cargoDTO == null)
+                if (cargo == null)
                     return NotFound("No encontrado");
 
-                _context.Cargos.Remove(cargoDTO);
+                _context.Cargos.Remove(cargo);
                 await _context.SaveChangesAsync();
 
                 return StatusCode(StatusCodes.Status200OK, new { Valor = true });

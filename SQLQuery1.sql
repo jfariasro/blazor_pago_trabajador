@@ -41,13 +41,21 @@ union
 select idcargo, nombre from empleado
 go
 
-insert into empleado(nombre, idcargo, edad, salario)
-values('Alberto Mendoza', 1, 26, 600)
-go
+--insert into empleado(nombre, idcargo, edad, salario)
+--values('Alberto Mendoza', 1, 26, 600)
+--go
 
 select * from cargo;
 select * from empleado;
 go
 
-update empleado set idcargo = 2 where idempleado = 7;
+--update empleado set idcargo = 2 where idempleado = 7;
+--go
+
+select * from pago;
+go
+
+select salario from empleado
+union
+select totalpago from pago
 go

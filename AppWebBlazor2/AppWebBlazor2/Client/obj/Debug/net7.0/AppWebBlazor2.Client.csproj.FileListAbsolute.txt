@@ -833,3 +833,4 @@ C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Client\ob
 C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Client\obj\Debug\net7.0\refint\AppWebBlazor2.Client.dll
 C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Client\obj\Debug\net7.0\AppWebBlazor2.Client.pdb
 C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Client\obj\Debug\net7.0\ref\AppWebBlazor2.Client.dll
+C:\Users\Ruben\Music\ASP.NET\AppWebBlazor2\AppWebBlazor2\AppWebBlazor2\Client\obj\Debug\net7.0\AppWebBlazor2.Client.sourcelink.json

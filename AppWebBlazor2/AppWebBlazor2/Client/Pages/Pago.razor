@@ -1,0 +1,163 @@
+﻿@page "/pago"
+@using AppWebBlazor2.Client.Services.Interfaces
+@using AppWebBlazor2.Shared
+
+@inject IEmpleadoService empleadoService;
+@inject IPagoService pagoService;
+
+<PageTitle>Pago</PageTitle>
+
+<h3>Pagos</h3>
+
+<div class="content">
+    <div class="row">
+
+        <input type="hidden" name="name" value="@idpago" />
+
+        <div class="col-4">
+            <label>Empleado:</label>
+            <select class="form-select" value="@idempleado" @onchange="EmpleadoSeleccionado">
+                <option value="0">-- Seleccionar --</option>
+                @foreach (var item in listaEmpleado)
+                {
+                    <option value="@item.Idempleado"> @item.Nombre </option>
+                }
+            </select>
+        </div>
+
+        <div class="col-3">
+            <label>Fecha:</label>
+            <InputDate class="form-control" @bind-Value="fechapago"></InputDate>
+        </div>
+
+        <div class="col-3">
+            <label>Total Pago:</label>
+            <InputNumber class="form-control" @bind-Value="totalpago"></InputNumber>
+        </div>
+
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-4">
+            <button class="btn btn-primary" @onclick="GuardarPago">Guardar</button>
+        </div>
+    </div>
+
+    <hr />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Empleado</th>
+                <th>Fecha Pago</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in listaPago)
+            {
+                <tr>
+                    <td>@item.Empleado!.Nombre</td>
+                    <td>@item.Fechapago</td>
+                    <td>@item.Totalpago</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning"
+                                @onclick="@(() => EditarPago(item.Idpago))">
+                            <span class="oi oi-pencil"></span>
+                        </button>
+                        <button class="btn btn-sm btn-danger"
+                                @onclick="@(() => EliminarPago(item.Idpago))">
+                            <span class="oi oi-trash"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+@code {
+    List<EmpleadoDTO> listaEmpleado = new List<EmpleadoDTO>();
+    List<PagoDTO> listaPago = new List<PagoDTO>();
+    int idempleado = 0;
+    int idpago = 0;
+    DateTime? fechapago = DateTime.Now;
+    decimal? totalpago = 0;
+
+    public void EmpleadoSeleccionado(ChangeEventArgs e)
+    {
+        int id = Convert.ToInt32(e.Value!.ToString());
+
+        this.idempleado = id;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        listaEmpleado = new List<EmpleadoDTO>();
+        listaEmpleado = await empleadoService.Listar();
+        await CargarListaPagos();
+    }
+
+    private async Task CargarListaPagos()
+    {
+        listaPago = new List<PagoDTO>();
+        listaPago = await pagoService.Listar();
+    }
+
+    private async void GuardarPago()
+    {
+        bool result = false;
+
+        var pagoDTO = new PagoDTO()
+            {
+                Idpago = this.idpago,
+                Empleado = this.listaEmpleado.Find(e => e.Idempleado == this.idempleado),
+                Fechapago = this.fechapago,
+                Totalpago = this.totalpago
+            };
+
+        if (this.idpago == 0)
+        {
+            result = await this.pagoService.Registrar(pagoDTO);
+        }
+        else
+        {
+            result = await this.pagoService.Editar(this.idpago, pagoDTO);
+        }
+
+        if (result)
+        {
+            this.idempleado = 0;
+            this.idpago = 0;
+            this.fechapago = DateTime.Now;
+            this.totalpago = 0;
+
+            await CargarListaPagos();
+            StateHasChanged();
+        }
+    }
+
+    private void EditarPago(int id)
+    {
+        var pago = listaPago.First(p => p.Idpago == id);
+
+        this.idpago = id;
+        this.idempleado = pago.Empleado!.Idempleado;
+        this.fechapago = pago.Fechapago;
+        this.totalpago = pago.Totalpago;
+    }
+
+    private async void EliminarPago(int id)
+    {
+        var result = await this.pagoService.Eliminar(id);
+
+        if (result)
+        {
+
+            await CargarListaPagos();
+            StateHasChanged();
+        }
+    }
+}

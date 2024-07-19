@@ -1,7 +1,7 @@
 {
   "entryAssembly": "AppWebBlazor2.Client",
   "resources": {
-    "hash": "sha256-PY6j9Gxs/G546iKu1ecJNg9X7JhMDYfFE5ZiGxd3/iQ=",
+    "hash": "sha256-wkmNJ2XNzOjmrhra5o7d/0+KEq9hagfQgkhUyTSqZ/8=",
     "runtime": {
       "dotnet.7.0.20.hqs5bjbv9e.js": "sha256-eaJTmow4t8eE7FZMZR5Ja41JMOefGCbIYDTdpclGsac=",
       "dotnet.timezones.blat": "sha256-gbATD5HDsHYtW8vdPYh9iSBY4O5CjvMeCSF5xXWF1xo=",
@@ -203,11 +203,11 @@
       "netstandard.dll": "sha256-N5CcC3sLzGBesbmeJAp5bwxABN9u7SwkIO5qfFjzoik=",
       "System.Private.CoreLib.dll": "sha256-bJS1DJmhjP7PvegYG+Z8O9EDtRY78HKinA3LUMVLlSQ=",
       "AppWebBlazor2.Shared.dll": "sha256-44TQG18HiRszvFK2o2mKswjcSPyLRlFveZRc6DoTwhY=",
-      "AppWebBlazor2.Client.dll": "sha256-4/lRfvwKDreiS9nrAdaXr0dmARVQZVByqTF8xmb7PYA="
+      "AppWebBlazor2.Client.dll": "sha256-fXAasUonWiKx9fHMqtHoTPq9DPbp2VdciLaCpiaASEc="
     },
     "pdb": {
       "AppWebBlazor2.Shared.pdb": "sha256-+9n2oz3aBUPCC8pKL6r+wxhjtYfP1VAVKJwLftNwSjM=",
-      "AppWebBlazor2.Client.pdb": "sha256-+J/17Gypzf5ssYP5fAV1cnYmPvqvsRwqSv/CqxZRAMY="
+      "AppWebBlazor2.Client.pdb": "sha256-GM/cEqAenQi28zfLu8sNmVEmNW+7Wtqx6zqGW+yUgkU="
     },
     "runtimeAssets": {
       "dotnet.wasm": {

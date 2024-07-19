@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWebBlazor2.Server", "AppWebBlazor2\Server\AppWebBlazor2.Server.csproj", "{E839FE3F-7DB6-4057-8CF5-EDF7507ED73E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppWebBlazor2.Server", "AppWebBlazor2\Server\AppWebBlazor2.Server.csproj", "{E839FE3F-7DB6-4057-8CF5-EDF7507ED73E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWebBlazor2.Client", "AppWebBlazor2\Client\AppWebBlazor2.Client.csproj", "{828197B1-A5DF-4AEC-BD4B-7135EC875C0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppWebBlazor2.Client", "AppWebBlazor2\Client\AppWebBlazor2.Client.csproj", "{828197B1-A5DF-4AEC-BD4B-7135EC875C0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWebBlazor2.Shared", "AppWebBlazor2\Shared\AppWebBlazor2.Shared.csproj", "{7AA5FE69-E429-4464-AAAB-8F44B17D475A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppWebBlazor2.Shared", "AppWebBlazor2\Shared\AppWebBlazor2.Shared.csproj", "{7AA5FE69-E429-4464-AAAB-8F44B17D475A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
