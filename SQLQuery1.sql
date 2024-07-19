@@ -41,6 +41,7 @@ union
 select idcargo, nombre from empleado
 go
 
+<<<<<<< HEAD
 --insert into empleado(nombre, idcargo, edad, salario)
 --values('Alberto Mendoza', 1, 26, 600)
 --go
@@ -59,3 +60,8 @@ select salario from empleado
 union
 select totalpago from pago
 go
+=======
+select * from cargo;
+select * from empleado;
+go
+>>>>>>> e8050a770c73a93de5266fc8aed70ebda7e8532f
